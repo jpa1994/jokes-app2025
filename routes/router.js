@@ -3,6 +3,8 @@ const router = express.Router()
 const axios = require('axios')
 const getJoke = require('../helpers/getJoke')
 
+router.use(express.static('public'))
+
 //http://localhost:3001 => home page
 router.get('/', (req, res)=> {
     // res.send('working...') => display home page
