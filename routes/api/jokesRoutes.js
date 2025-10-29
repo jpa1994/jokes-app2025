@@ -57,7 +57,7 @@ router.get('/type/:type', (req, res) => {
         .then(resp => typeArr = resp.data.filter(item => item.type == type))
         .then(typeArr => {
 
-            buildJokeArr(typeArr, jokesArr, pageData.startIdx, pageData.endIdx, pageData.page)
+            const jokeArrData = buildJokeArr(typeArr, jokesArr, pageData.startIdx, pageData.endIdx, pageData.page)
             res.render('pages/allJokes', {
                 title: type,
                 name: `${type} jokes`,
